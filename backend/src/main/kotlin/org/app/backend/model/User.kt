@@ -2,8 +2,6 @@ package org.app.backend.model
 
 import jakarta.persistence.*
 import org.hibernate.annotations.CreationTimestamp
-import org.hibernate.annotations.GenericGenerator
-import org.springframework.data.annotation.CreatedBy
 import java.util.Date
 import java.util.UUID
 
@@ -31,12 +29,10 @@ data class User(
 
     @CreationTimestamp
     @Column(name = "created_at", updatable = false)
-    val createdAt: Date,
+    val createdAt: Date?,
 
     @CreationTimestamp
     @Column(name = "updated_at")
-    val updatedAt: Date
+    val updatedAt: Date?
 
-) {
-
-}
+)

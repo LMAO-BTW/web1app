@@ -1,7 +1,7 @@
 package org.app.backend.model
 
 enum class Role {
-    USER,
+    ADMIN,
     STAFF,
-    ADMIN
+    USER
 }
