@@ -1,0 +1,43 @@
+schema {
+    query: Query
+    mutation: Mutation
+}
+
+type Query {
+    findUsers: [User]
+    findUserById(id: ID!): User
+}
+
+type Mutation {
+    createUser(input: UserSaveInput!): User
+    updateUser(input: UserUpdateInput!): User
+    deleteUser(input: ID!): Boolean
+}
+
+input UserSaveInput {
+    name: String!
+    email: String!
+    password: String!
+}
+
+input UserUpdateInput {
+    id: ID!
+    name: String!
+    email: String!
+}
+
+type User {
+    id: ID!
+    name: String!
+    email: String!
+    role: Role!
+    password: String!
+    createdAt: String!
+    updatedAt: String!
+}
+
+enum Role {
+    ADMIN,
+    STAFF,
+    USER
+}
