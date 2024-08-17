@@ -1,0 +1,25 @@
+
+schema {
+    query: Query
+}
+
+type Query {
+    findUsers: [User]
+    findUserById(id: ID!): User
+}
+
+type User {
+    id: ID!
+    name: String!
+    email: String!
+    role: Role!
+    password: String!
+    createdAt: String!
+    updatedAt: String!
+}
+
+enum Role {
+    ADMIN,
+    STAFF
+    USER
+}
